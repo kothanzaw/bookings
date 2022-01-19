@@ -1,0 +1,65 @@
+{{template "base" .}}
+{{define "css"}}
+<style>
+    .container {
+        max-width: 1440px;
+    }
+</style>
+{{end}}
+{{define "content"}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1>Make Reservation</h1>
+            <form class="my-4" action="/reservation" method="post" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" class="form-control" id="first_name"
+                        aria-describedby="firstNameHelp" autocomplete="false">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" id="last_name"
+                        aria-describedby="LastNameHelp" autocomplete="false">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        autocomplete="false">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" class="form-control" id="phone" aria-describedby="phoneHelp"
+                        autocomplete="false">
+                </div>
+                <button type="submit" class="btn btn-primary">Make Reservation</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{{end}}
+{{define "js"}}
+<script>
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+{{end}}

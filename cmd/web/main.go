@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/kothanzaw/bookings/pkg/config"
-	"github.com/kothanzaw/bookings/pkg/handlers"
-	"github.com/kothanzaw/bookings/pkg/render"
+	"github.com/kothanzaw/bookings/internal/config"
+	"github.com/kothanzaw/bookings/internal/handlers"
+	"github.com/kothanzaw/bookings/internal/render"
 )
 const portNumber=":8080"
 var app config.AppConfig
